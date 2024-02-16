@@ -1,17 +1,14 @@
 from flet import *
-from utils.colors import *
-
+from utils.colors import blue
 
 
 class Login(Container):
     def __init__(self, page: Page):
-        
         super().__init__()
         self.alignment = alignment.center
         self.expand = True
         self.bgcolor = blue
         # self.border_radius = border_radius=10
-        
         self.email_box = Container(
             content=TextField(
                 border=InputBorder.NONE,
@@ -28,7 +25,6 @@ class Login(Container):
             border=border.all(width=1, color='#bdcbf4'),
             border_radius=30
         )
-        
         self.password_box = Container(
             content=TextField(
                 border=InputBorder.NONE,
@@ -46,7 +42,6 @@ class Login(Container):
             border=border.all(width=1, color='#bdcbf4'),
             border_radius=30
         )
-        
         self.content = Column(
             alignment='center',
             horizontal_alignment='center',
@@ -57,7 +52,6 @@ class Login(Container):
                     bgcolor='white',
                     border_radius=20,
                     content=Column(
-                        
                         horizontal_alignment='center',
                         controls=[
                             Text(
@@ -68,19 +62,15 @@ class Login(Container):
                             ),
                             self.email_box,
                             self.password_box,
-                            
                             Container(height=0),
-                            
                             Container(
                                 alignment=alignment.center,
                                 bgcolor='#4e73df',
                                 height=40,
                                 border_radius=30,
                                 content=Text(value='Login'),
-                                on_click=self.login    
+                                on_click=self.login
                             ),
-                            
-
                             Container(
                                 content=Text(
                                     value='Forgot password?',
@@ -90,7 +80,6 @@ class Login(Container):
                                 on_click=lambda _: self.page.go(
                                     '/forgotpassword')
                             ),
-                            
                             Container(
                                 content=Text(
                                     value='Create new Account',
@@ -100,17 +89,12 @@ class Login(Container):
                                 on_click=lambda _: self.page.go(
                                     '/forgotpassword')
                             ),
-                            
-
-                        
                         ]
-                        
-                        
+
                     )
                 ),
             ]
         )
-    
+
     def login(self, e):
         pass
-    
