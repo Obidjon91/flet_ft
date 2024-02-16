@@ -8,7 +8,6 @@ class Login(Container):
         self.alignment = alignment.center
         self.expand = True
         self.bgcolor = blue
-        # self.border_radius = border_radius=10
         self.email_box = Container(
             content=TextField(
                 border=InputBorder.NONE,
