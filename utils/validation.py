@@ -13,7 +13,14 @@ class Validator:
         if not all(c.isalpha() or c.isspace() or c in "-'," for c in name):
             return None
         return True
-    def is_validate_email(self, email: str):
+    def is_validate_email(self, email: str)->bool:
+        """
+            Проверьте, действителен ли данное электронное письмо.
+            Args:
+            email (str): Адрес электронной почты будет подтвержден.
+            Returns:
+            bool: Верно, если электронное письмо действителен, в противном случае неверно.
+        """
         pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
         return re.match(pattern, email) is not None
     def is_validate_passwort(self, password: str):
