@@ -10,11 +10,11 @@ class Main(UserControl):
         super().__init__()
         self.page = page
         self.init_helper()
-    
+
     def init_helper(self):
         self.page.on_route_change = self.on_route_change
         self.page.go('/login')
-    
+
     def on_route_change(self, route):
         new_page = {
             "/login": Login,
@@ -22,7 +22,7 @@ class Main(UserControl):
             "/me": Dashboard,
             "/forgotpassword": ForgotPassword
         }[self.page.route](self.page)
-        
+
         self.page.views.clear()
         self.page.views.append(
             View(
@@ -30,5 +30,6 @@ class Main(UserControl):
                 [new_page]
             )
         )
-        
+
+
 app(target=Main, assets_dir='assets', view=WEB_BROWSER)
