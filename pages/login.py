@@ -1,4 +1,4 @@
-from flet import * 
+from flet import *
 from utils.colors import *
 
 
@@ -87,7 +87,8 @@ class Login(Container):
                                     color='#4e73df',
                                     size=12
                                 ),
-                                on_click=lambda _: self.page.go('/forgotpassword')
+                                on_click=lambda _: self.page.go(
+                                    '/forgotpassword')
                             ),
                             
                             Container(
@@ -96,7 +97,8 @@ class Login(Container):
                                     color='#4e73df',
                                     size=12
                                 ),
-                                on_click=lambda _: self.page.go('/forgotpassword')
+                                on_click=lambda _: self.page.go(
+                                    '/forgotpassword')
                             ),
                             
 
